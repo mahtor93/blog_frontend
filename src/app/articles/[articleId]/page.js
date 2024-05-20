@@ -13,10 +13,13 @@ export default function ArticleLayout({ params }) {
     }
     return (
         <>
-                    
-            <h2>{article.title}</h2>
-            <Image src={`${fileStorage}${article.image}`} alt={`${article.title} - image preview`} width={250} height={250} className="m-5 mr-10"></Image>
-            <p>{article.content}</p>
+            <div className="flex flex-col m-5 items-center">
+                <div className=" flex flex-col items-center max-w-[750px]">
+                    <h2 className="text-2xl">{article.title}</h2>
+                    <Image src={`${fileStorage}${article.image}`} alt={`${article.title} - image preview`} width={250} height={250} className="m-5 mr-10"></Image>
+                    <p>{article.content}</p>
+                </div>
+            </div>
         </>
     )
 
