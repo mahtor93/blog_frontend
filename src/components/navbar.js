@@ -27,8 +27,8 @@ const Navbar = () => {
     const font_color_scroll_false = 'text-slate-200' //color de texto inicial del navbar
 
     const bg_color_scroll_true = 'bg-[#F8FAFC]' //color al hacer scroll
-    const bg_blur_scroll_true = 'bg-black opacity-90' //fondo transparente, en caso de ser requerido
-    const font_color_scroll_true = 'text-[#F8FAFC]' //color del texto al hacer scroll
+    const bg_blur_scroll_true = 'bg-slate-100 dark:bg-slate-950 opacity-90' //fondo transparente, en caso de ser requerido
+    const font_color_scroll_true = 'text-slate-950 dark:text-slate-100' //color del texto al hacer scroll
 
     const HandleContact = (e) => {
         e.preventDefault();

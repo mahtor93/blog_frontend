@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { posts } from "@/example_data/posts";
 import ArticlePreview from "@/components/blogPreview.js";
+import Paginator from "@/components/paginator";
 export default function Home() {
   return (
     <>
@@ -20,8 +21,10 @@ export default function Home() {
         ) : (
           <div>No Posts avaliable</div>
         )}
+              <Paginator/>
       </div>
       </div>
+
     </>
   );
 }
