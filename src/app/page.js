@@ -5,14 +5,14 @@ import ArticlePreview from "@/components/blogPreview.js";
 import Paginator from "@/components/paginator";
 import { useState, useEffect } from "react";
 export default function Home() {
-  const [layoutConfig, setLayoutConfig] = useState('grid') //3 estados: column, grid, masonry
+  const [layoutConfig, setLayoutConfig] = useState('column') //3 estados: column, grid, masonry
   const [layoutView, setLayoutView] = useState('')
   const [orderView, setOrderView] = useState('')
   const fileStorage = '/images/'
   useEffect(() => {
     if (layoutConfig==='grid') {
-      setLayoutView('')
-      setOrderView('grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 sm:gap-4 md:gap-5 md:ml-5 md:mr-5 gap-5 ml-5 mr-5')
+      setLayoutView('mx-[250px]')
+      setOrderView('grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-4 md:gap-5 md:ml-5 md:mr-5 gap-5 ml-5 mr-5')
     }
     if (layoutConfig === 'column') {
       setLayoutView('flex justify-center items-center min-h-screen')
