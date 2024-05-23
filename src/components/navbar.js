@@ -27,8 +27,8 @@ const Navbar = () => {
     const font_color_scroll_false = 'text-slate-200' //color de texto inicial del navbar
 
     const bg_color_scroll_true = 'bg-[#F8FAFC]' //color al hacer scroll
-    const bg_blur_scroll_true = 'bg-black opacity-90' //fondo transparente, en caso de ser requerido
-    const font_color_scroll_true = 'text-[#F8FAFC]' //color del texto al hacer scroll
+    const bg_blur_scroll_true = 'bg-slate-100 dark:bg-slate-950 opacity-90' //fondo transparente, en caso de ser requerido
+    const font_color_scroll_true = 'text-slate-950 dark:text-slate-100' //color del texto al hacer scroll
 
     const HandleContact = (e) => {
         e.preventDefault();
@@ -65,7 +65,7 @@ const Navbar = () => {
             <nav className={`transition duration-200 ease-in-out p-4 fixed top-0 w-full flex z-40 shadow-2xl
     ${!isScrolled ? `${bg_color_scroll_false} ${font_color_scroll_false}` : ""}
     ${isScrolled ? `${bg_blur_scroll_true} ${font_color_scroll_true}` : ""}`}>
-                     <Link href="#" className="text-white font-bold flex justify-between items-center sm:absolute sm:left-0 sm:top-0 sm:mt-4 sm:ml-10">
+                     <Link href="/" className="text-white font-bold flex justify-between items-center sm:absolute sm:left-0 sm:top-0 sm:mt-4 sm:ml-10">
                         {/* */}
                         {   logotipo? (
                             <>
