@@ -3,9 +3,10 @@ import Image from "next/image";
 import { posts } from "@/example_data/posts";
 import ArticlePreview from "@/components/blogPreview.js";
 import Paginator from "@/components/paginator";
+import configBlog from "@/example_data/config";
 import { useState, useEffect } from "react";
 export default function Home() {
-  const [layoutConfig, setLayoutConfig] = useState('column') //3 estados: column, grid, masonry
+  const [layoutConfig, setLayoutConfig] = useState(configBlog.mainLayout) //3 estados: column, grid, masonry
   const [layoutView, setLayoutView] = useState('')
   const [orderView, setOrderView] = useState('')
   const fileStorage = '/images/'

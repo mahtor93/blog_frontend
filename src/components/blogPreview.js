@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react";
+import configBlog from "@/example_data/config";
 
 export default function ArticlePreview({ title, image, prevText, keywords, articleId }) {
-    const [layoutConfig, setLayoutConfig] = useState('column') //3 estados: column, grid, masonry
+    const [layoutConfig, setLayoutConfig] = useState(configBlog.mainLayout) //3 estados: column, grid, masonry
     const [layoutView, setLayoutView] = useState('')
     const [hashtagView, setHashtagView] = useState('')
     const fileStorage = '/images/'
@@ -14,7 +15,7 @@ export default function ArticlePreview({ title, image, prevText, keywords, artic
         }
         if (layoutConfig === 'column') {
             setLayoutView('flex flex-col items-center  justify-center')
-            setHashtagView('flex justify-end items-end pt-3 sm:pt-0 text-center')
+            setHashtagView('flex justify-end items-end pt-3 sm:mt-5 text-center')
         }
         if (layoutConfig === 'masonry') {
             setLayoutView('')
@@ -25,7 +26,7 @@ export default function ArticlePreview({ title, image, prevText, keywords, artic
     return (
         <>
 
-            <div className="border relative rounded-xl dark:border-indigo-950  border-blue-800 hover:border-blue-600  shadow-lg p-5">
+            <div className="border transition ease-in-out duration-300 relative rounded-xl dark:border-indigo-950  border-blue-800 hover:border-blue-600  shadow-lg p-5">
                 <div className={`${layoutView}`}>
                     <Link href={`/articles/${articleId}`}>
                         
