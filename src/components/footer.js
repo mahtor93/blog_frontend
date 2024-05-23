@@ -5,7 +5,7 @@ import { TiSocialLinkedinCircular } from "react-icons/ti";
 const Footer = () => {
     const nombre_creador = "Mario Tornería Blog Pattern"
     return (
-        <footer className="bottom-0 mt-10 w-full bg-gradient-to-b from-blue-800 to-indigo-950 text-white py-4">
+        <footer className="bottom-0 mt-10 w-full bg-gradient-to-b from-indigo-950 to-slate-950 text-white py-4">
             <div className="sm:max-w-7xl sm:mx-auto  lg:px-8">
                 <div className="flex justify-between flex-col p-[16px] sm:flex-row items-center">
                     <div className='order-first'>

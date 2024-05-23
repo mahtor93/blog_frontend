@@ -23,7 +23,7 @@ const Navbar = () => {
 
     const logotipo = /*'/images/image.png' //logo del navbar*/""
 
-    const bg_color_scroll_false = 'bg-gradient-to-b from-indigo-950 to-blue-800	' //color inicial del navbar
+    const bg_color_scroll_false = 'bg-gradient-to-b from-slate-950 to-indigo-950	' //color inicial del navbar
     const font_color_scroll_false = 'text-slate-200' //color de texto inicial del navbar
 
     const bg_color_scroll_true = 'bg-[#F8FAFC]' //color al hacer scroll
