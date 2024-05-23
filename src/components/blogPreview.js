@@ -25,33 +25,36 @@ export default function ArticlePreview({ title, image, prevText, keywords, artic
 
     return (
         <>
+            <div className="">
+                <div className="border transition ease-in-out duration-300 rounded-xl dark:border-indigo-950 border-blue-800 hover:border-blue-600 shadow-lg p-5">
+                    <div className={`${layoutView}`}>
+                        <Link href={`/articles/${articleId}`}>
+                            <div className="object-none w-150 place-items-center rounded-2xl mb-5">
+                                <img src={`${fileStorage}${image}`} alt={`${title} - image preview`} className="w-full h-[175px] rounded-2xl rounded2xl object-cover"></img>
+                            </div>
+                            <h2 className="text-2xl">{title}</h2>
+                            <p className="italic text-sm">{prevText}</p>
+                        </Link>
 
-            <div className="border transition ease-in-out duration-300 relative rounded-xl dark:border-indigo-950  border-blue-800 hover:border-blue-600  shadow-lg p-5">
-                <div className={`${layoutView}`}>
-                    <Link href={`/articles/${articleId}`}>
-                        
-                        <div className="object-none w-150 place-items-center rounded-2xl mb-5">
-                        <img src={`${fileStorage}${image}`} alt={`${title} - image preview`} className="w-full h-[175px] rounded-2xl rounded2xl object-cover"></img>
+                        <div className={`${hashtagView}`}>
+
+                            {keywords.length > 0 ? (
+                                keywords.map((keyword, index) => (
+                                    <Link href={`/hashtags/${keyword}`} className="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110  duration-300" key={index}>
+                                        <p className="dark:bg-slate-100 bg-slate-950 dark:text-slate-950 text-slate-100 ml-1 mr-1 pl-3 pr-3 rounded-xl" key={index}>{keyword}</p>
+                                    </Link>
+                                ))
+                            ) : (
+                                <>
+                                    <p className="dark:bg-slate-100 dark:text-slate-950 ml-1 mr-1 pl-3 pr-3 rounded-xl"> No Keywords </p>
+                                </>
+                            )
+                            }
+
                         </div>
-                        <h2 className="text-2xl">{title}</h2>
-                        <p className="italic text-sm">{prevText}</p>
-                    </Link>
-
-                    <div className={`${hashtagView}`}>
-                        {keywords.length > 0 ? (
-                            keywords.map((keyword, index) => (
-                                <p className="dark:bg-slate-100 bg-slate-950 dark:text-slate-950 text-slate-100 ml-1 mr-1 pl-3 pr-3 rounded-xl" key={index}>{keyword}</p>
-                            ))
-                        ) : (
-                            <>
-                                <p className="dark:bg-slate-100 dark:text-slate-950 ml-1 mr-1 pl-3 pr-3 rounded-xl"> No Keywords </p>
-                            </>
-                        )
-                        }
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

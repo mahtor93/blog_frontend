@@ -18,6 +18,7 @@ export default function ArticleLayout({ params }) {
                     <h2 className="text-4xl">{article.title}</h2>
                     <img src={`${fileStorage}${article.image}`} alt={`${article.title} - image preview`} className="w-full h-[350px] rounded-xl rounded2xl object-cover"></img>
                     <p>{article.content}</p>
+                    
                 </div>
             </div>
         </>

@@ -65,7 +65,7 @@ const Navbar = () => {
             <nav className={`transition duration-200 ease-in-out p-4 fixed top-0 w-full flex z-40 shadow-2xl
     ${!isScrolled ? `${bg_color_scroll_false} ${font_color_scroll_false}` : ""}
     ${isScrolled ? `${bg_blur_scroll_true} ${font_color_scroll_true}` : ""}`}>
-                     <Link href="#" className="text-white font-bold flex justify-between items-center sm:absolute sm:left-0 sm:top-0 sm:mt-4 sm:ml-10">
+                     <Link href="/" className="text-white font-bold flex justify-between items-center sm:absolute sm:left-0 sm:top-0 sm:mt-4 sm:ml-10">
                         {/* */}
                         {   logotipo? (
                             <>
