@@ -11,7 +11,7 @@ export default function ArticlePreview({ title, image, prevText, keywords, artic
     useEffect(() => {
         if (layoutConfig === 'grid') {
             setLayoutView('flex flex-col items-center justify-center ')
-            setHashtagView('flex flex-col items-end w-full mt-5 justify-end align-end mb-5 pt-5')
+            setHashtagView('flex flex-col w-full mt-5 bottom-0 mb-5 pt-5')
         }
         if (layoutConfig === 'column') {
             setLayoutView('flex flex-col items-center  justify-center')
@@ -26,7 +26,7 @@ export default function ArticlePreview({ title, image, prevText, keywords, artic
     return (
         <>
             <div className="">
-                <div className="border transition ease-in-out duration-300 rounded-xl dark:border-blue-600 border-blue-800 delay-50  mb-2 hover:shadow-blue-400 hover:shadow-lg p-5">
+                <div className="border transition ease-in-out duration-300 rounded-xl dark:border-blue-600 border-blue-800 delay-50  mb-2 hover:shadow-blue-400 hover:shadow-lg h-full max-h-[500px] p-5">
                     <div className={`${layoutView}`}>
                         <Link href={`/articles/${articleId}`}>
                             <div className="object-none w-150 place-items-center rounded-2xl mb-5">
