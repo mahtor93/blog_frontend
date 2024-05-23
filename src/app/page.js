@@ -12,7 +12,7 @@ export default function Home() {
   const fileStorage = '/images/'
   useEffect(() => {
     if (layoutConfig==='grid') {
-      setLayoutView('mx-[250px]')
+      setLayoutView('lg:mx-[250px]')
       setOrderView('grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-4 md:gap-5 md:ml-5 md:mr-5 gap-5 ml-5 mr-5')
     }
     if (layoutConfig === 'column') {
