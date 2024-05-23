@@ -111,9 +111,12 @@ const Navbar = () => {
                                 </div>
                                 {/* Agrega más enlaces según sea necesario */}
                             </div>
+                            <div className='z-50 fixed top-8 right-11 transition ease-in-out delay-50  hover:scale-110 mb-2  duration-300'>
+                            <button class="bg-indigo-700 p-2 pl-5 pr-5 rounded-3xl">Login</button>
+                                </div>
                         </div>
                         <div className={`sm:hidden ${!openCloseMenu ? "hidden" : ""}`} id="navbarResponsive">
-                            <ul className={`navbar-nav rounded-b-xl ${!isScrolled ? "bg-blue-800" : "bg-black opacity-90"} text-slate-200 text-lg p-3 text-center mt-[95px] fixed w-full left-0 top-[5px] space-y-4`}>
+                            <ul className={`navbar-nav rounded-b-xl ${!isScrolled ? "bg-indigo-950" : "bg-slate-950 opacity-90"} text-slate-200 text-lg p-3 text-center mt-[95px] fixed w-full left-0 top-[5px] space-y-4`}>
 
                                 <li className="nav-item ">
                                     <a href="#home" className="nav-link mr-4 hover:text-white font-medium" onClick={(e) => { e.preventDefault(); setOpenCloseMenu(!openCloseMenu); setTimeout(() => scrollToSection("home"), 100); }}>
@@ -133,6 +136,11 @@ const Navbar = () => {
                                 <li className='nav-item '>
                                     <a href="/servicios" className="nav-link mr-4 hover:text-white font-medium" onClick={(e) => { e.preventDefault(); setOpenCloseMenu(!openCloseMenu); setTimeout(() => scrollToSection("contact"), 100); }}>
                                         Contact
+                                    </a>
+                                </li>
+                                <li className='nav-item '>
+                                    <a href="/servicios" className="nav-link mr-4 hover:text-white font-medium" onClick={(e) => { e.preventDefault(); setOpenCloseMenu(!openCloseMenu); setTimeout(() => scrollToSection("contact"), 100); }}>
+                                        Login
                                     </a>
                                 </li>
                             </ul>
