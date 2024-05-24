@@ -1,5 +1,5 @@
 const configBlog = {
-    "mainLayout":"grid" //column, grid or masonry
+    "mainLayout":"column" //column, grid or masonry
 }
 
 export default configBlog
