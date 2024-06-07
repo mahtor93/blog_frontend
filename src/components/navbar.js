@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaCreditCard } from "react-icons/fa";
 import { IoLogoReact } from "react-icons/io5";
+import LoginPopUp from './loginPopUp';
 
 
 const Navbar = () => {
@@ -30,8 +31,9 @@ const Navbar = () => {
     const bg_blur_scroll_true = 'bg-slate-100 dark:bg-slate-950 opacity-90' //fondo transparente, en caso de ser requerido
     const font_color_scroll_true = 'text-slate-950 dark:text-slate-100' //color del texto al hacer scroll
 
-    const HandleContact = (e) => {
+    const HandlePopUp = (e) => {
         e.preventDefault();
+        console.log('popup!')
         setIsModalOpen(true);
     }
 
@@ -65,23 +67,23 @@ const Navbar = () => {
             <nav className={`transition duration-200 ease-in-out p-4 fixed top-0 w-full flex z-40 shadow-2xl
     ${!isScrolled ? `${bg_color_scroll_false} ${font_color_scroll_false}` : ""}
     ${isScrolled ? `${bg_blur_scroll_true} ${font_color_scroll_true}` : ""}`}>
-                     <Link href="/" className="text-white font-bold flex justify-between items-center sm:absolute sm:left-0 sm:top-0 sm:mt-4 sm:ml-10">
-                        {/* */}
-                        {   logotipo? (
-                            <>
-                                <Image src={logotipo} width={75} height={75} alt="Descripción de la imagen" />
-                            </>
-                        ):
+                <Link href="/" className="text-white font-bold flex justify-between items-center sm:absolute sm:left-0 sm:top-0 sm:mt-4 sm:ml-10">
+                    {/* */}
+                    {logotipo ? (
+                        <>
+                            <Image src={logotipo} width={75} height={75} alt="Descripción de la imagen" />
+                        </>
+                    ) :
                         (
                             <>
                                 <IoLogoReact className={`${isScrolled ? font_color_scroll_true : font_color_scroll_false} text-4xl sm:text-7xl top-10 right-10 animate-spin-slow`} />
                             </>
                         )
 
-                        }
-                        
-                        { /* */}
-                    </Link>
+                    }
+
+                    { /* */}
+                </Link>
                 <div className="max-w-7xl flex mx-auto justify-between sm:px-6">
                     <div className="flex p-[16px] items-center h-[70px]">
                         <div className="md:hidden block">
@@ -111,9 +113,12 @@ const Navbar = () => {
                                 </div>
                                 {/* Agrega más enlaces según sea necesario */}
                             </div>
+                            <div className='z-50 fixed top-8 right-11 transition ease-in-out delay-50  hover:scale-110 mb-2  duration-300'>
+                                <button className="bg-indigo-700 p-2 pl-5 pr-5 rounded-3xl" onClick={(e) => HandlePopUp(e)}>Login</button>
+                            </div>
                         </div>
                         <div className={`sm:hidden ${!openCloseMenu ? "hidden" : ""}`} id="navbarResponsive">
-                            <ul className={`navbar-nav rounded-b-xl ${!isScrolled ? "bg-blue-800" : "bg-black opacity-90"} text-slate-200 text-lg p-3 text-center mt-[95px] fixed w-full left-0 top-[5px] space-y-4`}>
+                            <ul className={`navbar-nav rounded-b-xl ${!isScrolled ? "bg-indigo-950" : "bg-slate-950 opacity-90"} text-slate-200 text-lg p-3 text-center mt-[95px] fixed w-full left-0 top-[5px] space-y-4`}>
 
                                 <li className="nav-item ">
                                     <a href="#home" className="nav-link mr-4 hover:text-white font-medium" onClick={(e) => { e.preventDefault(); setOpenCloseMenu(!openCloseMenu); setTimeout(() => scrollToSection("home"), 100); }}>
@@ -135,11 +140,21 @@ const Navbar = () => {
                                         Contact
                                     </a>
                                 </li>
+                                <li className='nav-item '>
+                                    <a href="/servicios" className="nav-link mr-4 hover:text-white font-medium" onClick={(e) => { e.preventDefault(); setOpenCloseMenu(!openCloseMenu); setTimeout(() => scrollToSection("contact"), 100); }}>
+                                        Login
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </nav>
+            {isModalOpen && (
+                <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 backdrop-blur-sm bg-opacity-75 '>
+                    <LoginPopUp closeModal={() => setIsModalOpen(false)}/>
+                </div>
+            )}
         </>
     );
 }

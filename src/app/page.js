@@ -23,7 +23,7 @@ export default function Home() {
   useEffect(() => {
     if (layoutConfig==='grid') {
       setLayoutView('lg:px-[250px] lg:py-[50px]')
-      setOrderView('grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-4 md:gap-5 md:ml-5 md:mr-5 gap-5 ml-5 mr-5')
+      setOrderView('grid  lg:grid-cols-3  md:grid-cols-2 grid-cols-1 sm:gap-4 md:gap-5 md:ml-5 md:mr-5 gap-5 ml-5 mr-5')
     }
     if (layoutConfig === 'column') {
       setLayoutView('flex justify-center items-center min-h-screen')
