@@ -3,7 +3,7 @@ import { IoLogoGithub } from "react-icons/io";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 
 const Footer = () => {
-    const nombre_creador = "Mario Tornería Blog Pattern"
+    const nombre_creador = "Mahtor Blog Canvas"
     return (
         <footer className="bottom-0 mt-10 w-full bg-gradient-to-b from-indigo-950 to-slate-950 text-white py-4">
             <div className="sm:max-w-7xl sm:mx-auto  lg:px-8">
