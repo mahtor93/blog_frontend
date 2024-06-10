@@ -14,12 +14,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>{metadata.title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       </head>
       <body className={` pt-[120px] ${inter.className}`}>
         <Navbar />
-        {children}
+          {children}
         <Footer />
       </body>
     </html>
-  );
+          );
 }

@@ -114,7 +114,7 @@ const Navbar = () => {
                                 {/* Agrega más enlaces según sea necesario */}
                             </div>
                             <div className='z-50 fixed top-8 right-11 transition ease-in-out delay-50  hover:scale-110 mb-2  duration-300'>
-                                <button className="bg-indigo-700 p-2 pl-5 pr-5 rounded-3xl" onClick={(e) => HandlePopUp(e)}>Login</button>
+                                <button className="bg-blue-700 p-2 pl-5 text-white pr-5 rounded-3xl" onClick={(e) => HandlePopUp(e)}>Login</button>
                             </div>
                         </div>
                         <div className={`sm:hidden ${!openCloseMenu ? "hidden" : ""}`} id="navbarResponsive">

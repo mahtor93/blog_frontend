@@ -32,7 +32,7 @@ export default function ArticlePreview({ title, image, prevText, keywords, artic
                             <div className="object-none w-150 place-items-center rounded-2xl mb-5">
                                 <img src={`${fileStorage}${image}`} alt={`${title} - image preview`} className="w-full h-[175px] rounded-2xl rounded2xl object-cover"></img>
                             </div>
-                            <h2 className="text-2xl">{title}</h2>
+                            <h2 className="text-2xl ">{title}</h2>
                             <p className="italic mt-3 mb-3">by {author}</p>
                             <p className="italic text-sm">{prevText}</p>
                         </Link>
